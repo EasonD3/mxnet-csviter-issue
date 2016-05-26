@@ -10,8 +10,10 @@ def print_iter(iter):
     iter.reset()
     bi = 1
     for b in iter:
+        print '* batch {}: len(data[0]) = {}, b.pad = {}'.format(bi, len(b.data[0].asnumpy()), b.pad)
+        print 'data[0]:'
         print b.data[0].asnumpy()
-        print 'batch {}: {} {}'.format(bi, len(b.data[0].asnumpy()), b.pad)
+        print ''
         bi += 1
 
 
